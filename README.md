@@ -51,12 +51,17 @@ sudo curl https://uploads.admlbs.fr/download.php?file=mcinstall --output /usr/bi
 
 # Launch
 
-* To launch the script you must use sudo or being root
+* To launch the script and install a server you must use sudo or being root
 
 ```bash
-mcinstall
+mcinstall install
 ```
 
+* To see all commands please type 
+
+```bash
+mcinstall help
+```
 # Updating
 
 * To update the script you must use sudo or being root
