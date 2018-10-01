@@ -54,16 +54,18 @@ fi
 fi
 
 fi
+cp /tmp/minecraftinstall_files/launch.sh $dossier_spigotinstall/launch.sh
+cp /tmp/minecraftinstall_files/eula.txt $dossier_spigotinstall/eula.txt
 servername=$(whiptail --title "McInstall" --inputbox "Choose your server's name. (Ex : server, server1 or server2)" 10 60  3>&1 1>&2 2>&3)
     RAM=$(whiptail --title "McInstall" --inputbox "How much RAM do you want to allow ? (Express it in G or M, Example : 2G or 2000M )" 10 60  3>&1 1>&2 2>&3)
-sed -i "s/2G/$RAM /g" $dossier/launch.sh
-sed -i "s/server/$servername /g" $dossier/launch.sh
-echo "Directory : $dossier" >> $dossier/INFORMATIONS.txt
-echo "Allowed RAM : $RAM" >> $dossier/INFORMATIONS.txt
-echo "To view the console type the command : screen -r server" >> $dossier/INFORMATIONS.txt
-echo "To quit the console without stop the server please TYPE CTRL+A and CTRL+D" >> $dossier/INFORMATIONS.txt;
-cd $dossier
-sh $dossier/launch.sh 
+sed -i "s/2G/$RAM /g" $dossier_spigotinstall/launch.sh
+sed -i "s/server/$servername /g" $dossier_spigotinstall/launch.sh
+echo "Directory : $dossier_spigotinstall" >> $dossier_spigotinstall/INFORMATIONS.txt
+echo "Allowed RAM : $RAM" >> $dossier_spigotinstall/INFORMATIONS.txt
+echo "To view the console type the command : screen -r server" >> $dossier_spigotinstall/INFORMATIONS.txt
+echo "To quit the console without stop the server please TYPE CTRL+A and CTRL+D" >> $dossier_spigotinstall/INFORMATIONS.txt;
+cd $dossier_spigotinstall
+sh $dossier_spigotinstall/launch.sh 
 }
 updatercheck_when_install () { #VERSION OF THE UPDATER WHEN HE'S AUTO-LAUNCHED WITH THE INSTALL COMMAND OF THE SCRIPT 
     if [ "$ACTUAL_VERSION" == "$LATEST_VERSION" ] 
@@ -155,7 +157,7 @@ screen -dm java -jar BuildTools.jar --rev $1
             percentage=$(expr $percentage + 1)
         done
 } | whiptail --title "Minecraftinstall" --gauge "Compile the version of Spigot ($1) you want to install. It can take time. Please do not close the script." 8 78 0
-cp /tmp/minecraftinstall_files/spigot-$1.jar $dossier/spigot.jar
+cp /tmp/minecraftinstall_files/spigot-$1.jar $dossier_spigotinstall/spigot.jar
 }
 
 
