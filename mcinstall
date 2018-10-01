@@ -41,7 +41,7 @@ else
   if [ "$OPTION" = 5 ]; then
         use_buildtools_en_gui 1.12.2
 else 
-  if [ "$OPTION" = 5 ]; then
+  if [ "$OPTION" = 6 ]; then
         use_buildtools_en_gui 1.13
 fi
 
