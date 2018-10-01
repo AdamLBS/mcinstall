@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ "$EUID" -ne 0 ]
+if [ "$EUID" -ne 0 ] # Check if the user is root
   then echo "Please run as root or with sudo"
   exit
 fi
@@ -8,6 +8,7 @@ command=$1
 ACTUAL_VERSION=1.0
 SCRIPT_NAME="/usr/bin/mcinstall"
 NEW_FILE="/tmp/mcinstall"
+#################################################################################### Functions ##################################################
 spigot_install () {
     dossier_spigotinstall=$(whiptail --title "McInstall" --inputbox "In which directory do you want to install your Bungeecord server? (Example: /home/bungee and no /home/bungee/)" 10 60  3>&1 1>&2 2>&3)
 cd $dossier_spigotinstall 2> /dev/null
@@ -77,8 +78,8 @@ case $doit in
   y|Y) echo -e "\e[32mLoading updater.\e[0m" ;;
   *) echo  "Please type y (yes) or n (no)" && exit ;; 
 esac  
-	curl https://uploads.admlbs.fr/download.php?file=mcinstall_updater --output /tmp/mcinstall
-check_upgrade
+	curl https://uploads.admlbs.fr/download.php?file=mcinstall_updater --output /tmp/mcinstall # Download latest version
+check_upgrade # Update the script by itself 
     fi
 }
 
@@ -233,7 +234,7 @@ echo "          update : Update the script"
 echo "          install : Installs a bungee or spigot server"
 echo "          help : Show this message"
 }
-
+######################################################################################################################################
 
 
 
