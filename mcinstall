@@ -157,7 +157,7 @@ screen -dm java -jar BuildTools.jar --rev $1
             echo $percentage
             percentage=$(expr $percentage + 1)
         done
-} | whiptail --title "Minecraftinstall" --gauge "Compile the version of Spigot ($1) you want to install. It can take time. Please do not close the script." 8 78 0
+} | whiptail --title "McInstall" --gauge "Compile the version of Spigot ($1) you want to install. It can take time. Please do not close the script." 8 78 0
 cp /tmp/minecraftinstall_files/spigot-$1.jar $dossier_spigotinstall/spigot.jar
 }
 
