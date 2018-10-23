@@ -72,7 +72,7 @@ mcinstall update
 # Bugs
 
 
-* Please report all bugs to adam@laabase.ovh
+* Please report all bugs to adam@admlbs.fr
 
 
 # License
