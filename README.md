@@ -32,7 +32,8 @@
 * 1.10.x
 * 1.11.x
 * 1.12.x
-* 1.13 (Beta)
+* 1.13.x
+* Latest version of Spigot.
 
 # Installing
 
