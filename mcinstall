@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]
 fi
 LATEST_VERSION=$(curl -s 'https://uploads.admlbs.fr/version')
 command=$1
-ACTUAL_VERSION=1.4
+ACTUAL_VERSION=1.4.3
 SCRIPT_NAME="/usr/bin/mcinstall"
 NEW_FILE="/tmp/mcinstall"
 spigot_install () {
@@ -25,7 +25,7 @@ OPTION=$(whiptail --nocancel --title "McInstall" --menu "Choose your version (us
 "6" "1.13" \
 "7" "1.13.1" \
 "8" "1.13.2" \
-"9" "Latest version" 3>&1 1>&2 2>&3)
+"9" "1.14.4" 3>&1 1>&2 2>&3)
 
 if [ "$OPTION" = 1 ]; then
       use_buildtools_en_gui 1.8.8
@@ -52,7 +52,7 @@ else
         use_buildtools_en_gui 1.13.2
 else
   if [ "$OPTION" = 9 ]; then
-        use_buildtools_en_gui latest
+        use_buildtools_en_gui 1.14.4
 fi
 
 fi
@@ -143,7 +143,7 @@ cd /tmp/minecraftinstall_files/
 
 }
 use_buildtools_en_gui () {
-screen -dm java -Xmx520M -jar BuildTools.jar --rev $1
+screen -dm java -Xmx1000M -jar BuildTools.jar --rev $1
 # Keep checking if the process is running. And keep a count.
 {
         percentage="0"
