@@ -1,5 +1,8 @@
-on: pull_request
-name: Pull Request
+on:
+  push:
+    branches:
+    - master
+name: Push Event
 jobs:
   test:
     name: Run tests
@@ -8,4 +11,5 @@ jobs:
     - uses: actions/checkout@master
     - name: Test
       uses: skx/github-action-tester@master
-
+      with:
+        script: .github/fast-tests.sh
