@@ -1,1 +1,1 @@
-bash mcinstall_testing install
+bash mcinstall_testing test
