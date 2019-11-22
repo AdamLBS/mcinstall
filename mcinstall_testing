@@ -58,7 +58,7 @@ cd /tmp/minecraftinstall_files/
 use_buildtools_en_gui () {
 cd /tmp/minecraftinstall_files/
 java -Xmx1000M -jar BuildTools.jar --rev $1
-cp /tmp/minecraftinstall_files/spigot-$1.jar $dossier_spigotinstall/spigot.jar
+cp /tmp/minecraftinstall_files/spigot-$1.jar /tmp/test/spigot.jar
 }
 
 
@@ -114,26 +114,26 @@ fi
 }
 spigot_install () {
 dossier_spigotinstall="~/test"
-cd $dossier_spigotinstall 2> /dev/null
+cd /tmp/test 2> /dev/null
 
-cd $dossier_spigotinstall 2> /dev/null
+cd /tmp/test 2> /dev/null
 
-if cd $dossier_spigotinstall 2> /dev/null; then echo " "  ; else echo -e "\e[32mThe folder does not exist therefore it has been created.\e[0m" && mkdir -p $dossier_spigotinstall ; fi 
+if cd /tmp/test 2> /dev/null; then echo " "  ; else echo -e "\e[32mThe folder does not exist therefore it has been created.\e[0m" && mkdir -p /tmp/test ; fi 
 cd /tmp/minecraftinstall_files/
 use_buildtools_en_gui 1.14.4
 
-cp /tmp/minecraftinstall_files/launch.sh $dossier_spigotinstall/launch.sh
-cp /tmp/minecraftinstall_files/eula.txt $dossier_spigotinstall/eula.txt
+cp /tmp/minecraftinstall_files/launch.sh /tmp/test/launch.sh
+cp /tmp/minecraftinstall_files/eula.txt /tmp/test/eula.txt
 servername=server1
 RAM=2G
-sed -i "s/2G/$RAM /g" $dossier_spigotinstall/launch.sh
-sed -i "s/server/$servername /g" $dossier_spigotinstall/launch.sh
-echo "Directory : $dossier_spigotinstall" >> $dossier_spigotinstall/INFORMATIONS.txt
-echo "Allocated RAM : $RAM" >> $dossier_spigotinstall/INFORMATIONS.txt
-echo "To view the console type the following command : screen -r server" >> $dossier_spigotinstall/INFORMATIONS.txt
-echo "To quit the console without stopping the server please TYPE CTRL+A and CTRL+D" >> $dossier_spigotinstall/INFORMATIONS.txt;
-cd $dossier_spigotinstall
-sh $dossier_spigotinstall/launch.sh 
+sed -i "s/2G/$RAM /g" /tmp/test/launch.sh
+sed -i "s/server/$servername /g" /tmp/test/launch.sh
+echo "Directory : /tmp/test" >> /tmp/test/INFORMATIONS.txt
+echo "Allocated RAM : $RAM" >> /tmp/test/INFORMATIONS.txt
+echo "To view the console type the following command : screen -r server" >> /tmp/test/INFORMATIONS.txt
+echo "To quit the console without stopping the server please TYPE CTRL+A and CTRL+D" >> /tmp/test/INFORMATIONS.txt;
+cd /tmp/test
+sh /tmp/test/launch.sh 
 }
 updatercheck_when_install () { #VERSION OF THE UPDATER WHEN HE'S AUTO-LAUNCHED WITH THE INSTALL COMMAND OF THE SCRIPT 
     if [ "$ACTUAL_VERSION" == "$LATEST_VERSION" ] 
