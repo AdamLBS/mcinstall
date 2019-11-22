@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: AdamLBS/mcinstall@v1
+    - uses: AdamLBS/mcinstall@v1.4.3
     - name: Run a one-line script
       run: bash mcinstall
     - name: Run a multi-line script
