@@ -140,6 +140,11 @@ curl https://uploads.admlbs.fr/download.php?file=eula.txt --output /tmp/minecraf
 
 chmod 0777 --recursive /tmp/minecraftinstall_files
 cd /tmp/minecraftinstall_files/
+use_buildtools_test_gui () {
+cd /tmp/minecraftinstall_files/
+java -Xmx1000M -jar BuildTools.jar --rev $1
+cp /tmp/minecraftinstall_files/spigot-$1.jar /tmp/test/spigot.jar
+}
 
 }
 use_buildtools_en_gui () {
@@ -333,6 +338,38 @@ updater_check
 else
   if [ "$command" == "$command" ]; then
 help_message
+else
+  if [ "$command" == "debug" ]; then
+
+  download_prerequis_vb
+  rm minecraftinstall_files/launch.sh
+ 
+./prerequis 
+cd /tmp/testmc 2> /dev/null
+
+cd /tmp/testmc 2> /dev/null
+
+if cd /tmp/testmc 2> /dev/null; then echo " "  ; else echo -e "\e[32mThe folder does not exist therefore it has been created.\e[0m" && mkdir -p /tmp/testmc ; fi 
+cd /tmp/minecraftinstall_files/
+use_buildtools_test_gui 1.14.4
+
+cp /tmp/minecraftinstall_files/launch.sh /tmp/testmc/launch.sh
+cp /tmp/minecraftinstall_files/eula.txt /tmp/testmc/eula.txt
+servername=server1
+RAM=2G
+sed -i "s/2G/$RAM /g" /tmp/testmc/launch.sh
+sed -i "s/server/$servername /g" /tmp/testmc/launch.sh
+echo "Directory : /tmp/testmc" >> /tmp/testmc/INFORMATIONS.txt
+echo "Allocated RAM : $RAM" >> /tmp/testmc/INFORMATIONS.txt
+echo "To view the console type the following command : screen -r server" >> /tmp/testmc/INFORMATIONS.txt
+echo "To quit the console without stopping the server please TYPE CTRL+A and CTRL+D" >> /tmp/testmc/INFORMATIONS.txt;
+cd /tmp/testmc
+ls -l
+FILE=/tmp/testmc/spigot.jar
+if [[ -f "$FILE" ]]; then
+    echo "$FILE exist"
+fi
+fi
 fi
 fi
 fi
