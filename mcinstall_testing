@@ -183,7 +183,7 @@ else
   if [ "$command" == "help" ]; then
 help_message
 else 
-if [ "$command" ==  "install" ];
+if [ "$command" ==  "nnn" ];
  then
  apt-get --force-yes --yes install curl
   updatercheck_when_install
@@ -296,7 +296,7 @@ else
   if [ "$command" == "$command" ]; then
 help_message
 else
-if [ "$command" == "installtest" ]; then
+if [ "$command" == "install" ]; then
  apt-get --force-yes --yes install curl
 download_prerequis_vb
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' sudo|grep "install ok installed")
