@@ -143,7 +143,7 @@ cd /tmp/minecraftinstall_files/
 use_buildtools_test_gui () {
 cd /tmp/minecraftinstall_files/
 java -Xmx1000M -jar BuildTools.jar --rev $1
-cp /tmp/minecraftinstall_files/spigot-$1.jar /tmp/test/spigot.jar
+cp /tmp/minecraftinstall_files/spigot-$1.jar /tmp/testmc/spigot.jar
 }
 
 }
@@ -365,6 +365,9 @@ ls -l
 FILE=/tmp/testmc/spigot.jar
 if [[ -f "$FILE" ]]; then
     echo "$FILE exist"
+    else 
+    echo "$FILE not here"
+fi
 else
   if [ "$command" == "$command" ]; then
 help_message
