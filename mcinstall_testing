@@ -178,7 +178,9 @@ echo "          help : Shows this message"
 
 if [ "$command" ==  "" ];
 then 
-help_message
+download_prerequis_vb
+./prerequis 
+spigot_install
 else
   if [ "$command" == "help" ]; then
 help_message
