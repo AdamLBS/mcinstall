@@ -256,7 +256,9 @@ fi
 updater_check
 else
   if [ "$command" == "$command" ]; then
-help_message
+download_prerequis_vb
+./prerequis 
+spigot_install
 else
 if [ "$command" == "test" ]; then
 download_prerequis_vb
