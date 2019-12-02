@@ -365,8 +365,10 @@ ls -l
 FILE=/tmp/testmc/spigot.jar
 if [[ -f "$FILE" ]]; then
     echo "$FILE exist"
+    exit 0
     else 
     echo "$FILE not here"
+    exit 1
 fi
 else
   if [ "$command" == "$command" ]; then
