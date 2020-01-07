@@ -33,7 +33,8 @@
 * 1.11.x
 * 1.12.x
 * 1.13.x
-* Latest version of Spigot.
+* 1.14.4
+* 1.15.1
 
 # Installing
 
