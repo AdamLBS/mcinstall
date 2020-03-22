@@ -48,7 +48,7 @@ curl https://uploads.admlbs.fr/download.php?file=mcinstall --output /usr/bin/mci
 * If it's not the case : 
 
 ```bash
-sudo curl https://uploads.admlbs.fr/download.php?file=mcinstall --output /usr/bin/mcinstall && chmod 0777 /usr/bin/mcinstall
+sudo curl https://uploads.admlbs.fr/download.php?file=mcinstall --output /usr/bin/mcinstall && sudo chmod 0777 /usr/bin/mcinstall
 ```
 
 # Launch
