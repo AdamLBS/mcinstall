@@ -1,6 +1,6 @@
 # Bungeecord and Spigot installer for Linux
 
-* [Requirements](#system-requirements)
+* [Requirements](#requirements)
 * [Features](#features)
 * [Supported versions](#supported-versions)
 * [Installing](#installing)
