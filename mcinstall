@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]
 fi
 LATEST_VERSION=$(curl -s 'https://uploads.admlbs.fr/version')
 command=$1
-ACTUAL_VERSION=1.4.5
+ACTUAL_VERSION=1.4.6
 SCRIPT_NAME="/usr/bin/mcinstall"
 NEW_FILE="/tmp/mcinstall"
 spigot_install () {
