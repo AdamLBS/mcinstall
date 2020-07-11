@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]
 fi
 LATEST_VERSION=$(curl -s 'https://uploads.admlbs.fr/version')
 command=$1
-ACTUAL_VERSION=1.4.7
+ACTUAL_VERSION=1.4.8
 SCRIPT_NAME="/usr/bin/mcinstall"
 NEW_FILE="/tmp/mcinstall"
 spigot_install () {
@@ -27,7 +27,8 @@ OPTION=$(whiptail --nocancel --title "McInstall" --menu "Choose your version (us
 "8" "1.13.2" \
 "9" "1.14.4" \
 "10" "1.15.1" \
-"11" "1.15.2" 3>&1 1>&2 2>&3)
+"11" "1.15.2" \
+"12" "1.16.1" 3>&1 1>&2 2>&3)
 
 if [ "$OPTION" = 1 ]; then
       use_buildtools_en_gui 1.8.8
@@ -61,11 +62,14 @@ else
 else
   if [ "$OPTION" = 11 ]; then
         use_buildtools_en_gui 1.15.2
+        else
+  if [ "$OPTION" = 12 ]; then
+        use_buildtools_en_gui 1.16.1
 fi
 fi
 
 fi
-
+fi
 fi
 fi
 
@@ -95,8 +99,8 @@ sh $dossier_spigotinstall/launch.sh
 }
 updatercheck_when_install () { #VERSION OF THE UPDATER WHEN HE'S AUTO-LAUNCHED WITH THE INSTALL COMMAND OF THE SCRIPT 
     if [ "$ACTUAL_VERSION" == "$LATEST_VERSION" ] 
-    then :
-    else 
+    then echo "Last version"
+else
   read  -p "You do not have the latest version of the program. We advise you to update it as soon as possible. Type y to start the update. (y or n)" doit 
 case $doit in  
   n|N) echo -e "You refused to update the program." && exit ;; 
